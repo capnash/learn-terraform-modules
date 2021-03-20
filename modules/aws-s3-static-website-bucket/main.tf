@@ -31,11 +31,11 @@ EOF
   tags = var.tags
 
   provisioner "local-exec" {
-    command = "aws --profile=aws-devops s3 cp www/index.html s3://${var.bucket_name}"
+    command = "aws s3 cp www/index.html s3://${var.bucket_name}"
   }
 
 
   provisioner "local-exec" {
-    command = "aws --profile=aws-devops s3 cp www/error.html s3://${var.bucket_name}"
+    command = "aws s3 cp www/error.html s3://${var.bucket_name}"
   }
 }
